@@ -15,7 +15,8 @@ def roman_to_int(roman_string):
     for i in range(len(roman_string)):
         if dictio_rom.get(roman_string[i], 0) == 0:
             return 0
-        if (i != (len(roman_string) - 1) and dictio_rom[roman_string[i]] < dictio_rom[roman_string[i + 1]]):
+        if (i != (len(roman_string) - 1) and
+                dictio_rom[roman_string[i]] < dictio_rom[roman_string[i + 1]]):
                 number += dictio_rom[roman_string[i]] * -1
         else:
             number += dictio_rom[roman_string[i]]
