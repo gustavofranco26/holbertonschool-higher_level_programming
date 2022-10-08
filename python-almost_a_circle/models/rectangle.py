@@ -89,3 +89,13 @@ class Rectangle(Base):
         for i in range(height):
             print(" " * x, end="")
             print("#" * width)
+
+    def __str__(self):
+        """string representation"""
+        y = str(self.__y)
+        h = str(self.__height)
+        x = str(self.__x)
+        w = str(self.__width)
+        i = str(self.id)
+        string = "[Rectangle] (" + i + ") " + x + "/" + y + " - " + w + "/" + h
+        return string
