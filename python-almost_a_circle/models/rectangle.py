@@ -110,7 +110,7 @@ class Rectangle(Base):
         for x, y in kwargs.items():
             if hasattr(self, x):
                 setattr(self, x, y)
-                
+
     def to_dictionary(self):
         """Dictionary"""
         Dictionary = {}
