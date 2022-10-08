@@ -23,7 +23,7 @@ class Square(Rectangle):
         string = "[Square] (" + i + ") " + x + "/" + y + " - " + w
         return string
 
-     @property
+    @property
     def size(self):
         """Getter"""
         return self.width
