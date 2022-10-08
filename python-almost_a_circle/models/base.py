@@ -53,3 +53,18 @@ class Base:
         aux = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         aux.update(**dictionary)
         return aux
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        try:
+            with open(cls.__name__ + '.json', mode='r+',
+                      encoding='utf-8') as json_file:
+                json_string = json_file.read()
+            json_list = Base.from_json_string(json_string)
+            instance_list = []
+            for a_dict in json_list:
+                instance_list.append(cls.create(**a_dict))
+            return instance_list
+        except FileNotFoundError:
+            return []
