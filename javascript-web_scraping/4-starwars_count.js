@@ -6,9 +6,9 @@ request(`${process.argv[2]}`, (err, response, body) => {
     console.log(err);
   } else {
     const films = JSON.parse(body).results;
-	  console.log(films.reduce((c, e) => {
-		  e.characters.forEach(tu => tu.includes("18") ? c++ : c);
-		  return c;
-  }, 0));
+    console.log(films.reduce((c, e) => {
+      e.characters.forEach(tu => tu.includes('18') ? c++ : c);
+      return c;
+    }, 0));
   }
 });
